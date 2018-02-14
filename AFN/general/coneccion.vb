@@ -15,22 +15,22 @@ Public Class coneccion
 
     Public Sub New(Optional ByVal BaseDato As String = "", Optional ByVal Server As String = "", Optional ByVal usuario As String = "", Optional ByVal passw As String = "")
         If Server = "" Then
-            sevrDB = "SANTIAGO"
+            sevrDB = "MyServer"
         Else
             sevrDB = Server
         End If
         If BaseDato = "" Then
-            actDB = "NIPPO"
+            actDB = "MyDB"
         Else
             actDB = BaseDato
         End If
         If usuario = "" Then
-            userDB = "sa"
+            userDB = "MyUser"
         Else
             userDB = usuario
         End If
         If passw = "" Then
-            passDB = "nippon2006"
+            passDB = "MyPass"
         Else
             passDB = passw
         End If
