@@ -34,6 +34,7 @@ Partial Class form_welcome
         Me.CambiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cambio1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cambio2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Cambio10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.Cambio3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cambio9 = New System.Windows.Forms.ToolStripMenuItem()
@@ -126,7 +127,7 @@ Partial Class form_welcome
         '
         'CambiosToolStripMenuItem
         '
-        Me.CambiosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Cambio1, Me.Cambio2, Me.ToolStripMenuItem2, Me.Cambio3, Me.Cambio9, Me.Cambio4, Me.Cambio5, Me.ToolStripMenuItem3, Me.Cambio6, Me.Cambio7, Me.Cambio8})
+        Me.CambiosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Cambio1, Me.Cambio2, Me.Cambio10, Me.ToolStripMenuItem2, Me.Cambio3, Me.Cambio9, Me.Cambio4, Me.Cambio5, Me.ToolStripMenuItem3, Me.Cambio6, Me.Cambio7, Me.Cambio8})
         Me.CambiosToolStripMenuItem.Name = "CambiosToolStripMenuItem"
         Me.CambiosToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.CambiosToolStripMenuItem.Text = "Cambios"
@@ -142,6 +143,13 @@ Partial Class form_welcome
         Me.Cambio2.Name = "Cambio2"
         Me.Cambio2.Size = New System.Drawing.Size(276, 22)
         Me.Cambio2.Text = "Actualizar Descripciones"
+        '
+        'Cambio10
+        '
+        Me.Cambio10.Name = "Cambio10"
+        Me.Cambio10.Size = New System.Drawing.Size(276, 22)
+        Me.Cambio10.Text = "Actualizar Gestion"
+        Me.Cambio10.Visible = False
         '
         'ToolStripMenuItem2
         '
@@ -450,4 +458,5 @@ Partial Class form_welcome
     Friend WithEvents Sistema4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProcesosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Proceso1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Cambio10 As System.Windows.Forms.ToolStripMenuItem
 End Class

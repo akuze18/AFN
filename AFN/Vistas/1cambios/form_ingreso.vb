@@ -18,6 +18,7 @@
     Private Sub form_ingreso_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim indice As Integer
         Dim TPcontab, Tzona, Ttipo, Tcategoria, Tproveedor, Tatributo As DataTable
+        Dim TPgestion As gestion
         'cargar información en los controles que no varian
         'periodo contable
         With cbFecha_ing
@@ -73,6 +74,12 @@
             .Items.Clear()
             .Items.Add("COSTO")
             .Items.Add("REVALORIZACION")
+        End With
+
+        With cboGestion
+            TPgestion = base.GESTIONES
+            .Items.AddRange(TPgestion.GetAllArray)
+            .SelectedIndex = -1
         End With
 
         'cargar combo atributos por grupo (paso3)
@@ -843,6 +850,11 @@
             cboCateg.Focus()
             Exit Sub
         End If
+        If cboGestion.SelectedIndex = -1 Then
+            MsgBox("Debe indicar la gestion del Activo Fijo", vbExclamation, "NH FOODS CHILE")
+            cboGestion.Focus()
+            Exit Sub
+        End If
         If Tcantidad.Text = "" Then
             MsgBox("Debe indicar la cantidad de artículos", vbExclamation, "NH FOODS CHILE")
             Tcantidad.Focus()
@@ -875,6 +887,7 @@
         'simplicación de variables
         Dim documento, derecho, origen, descrip, proveedor, pcompra, vutil, zona, cantidad, clase, _
         categoria, subzona, subclase, usuario, total_compra, CtiPo, depreciar As String
+        Dim sGestion As gestion.fila
         Dim fcompra, fecha_contab As DateTime
         CtiPo = cboConsist.Text
         descrip = Tdescrip.Text
@@ -888,6 +901,7 @@
         categoria = cboCateg.SelectedValue
         subzona = cboSubzona.SelectedValue
         subclase = cboSubclase.SelectedValue
+        sGestion = cboGestion.SelectedItem
         usuario = form_welcome.GetUsuario
         If Tdoc.Text = "" Then
             documento = "SIN_DOCUMENTO"
@@ -933,14 +947,14 @@
                 form_ter_obra.Close()
             End If
             'ingreso primer registro FINANCIERO
-            mRS = base.INGRESO_FINANCIERO(codigo, zona, cantidad, clase, categoria, subzona, subclase, depreciar, usuario)
+            mRS = base.INGRESO_FINANCIERO(codigo, zona, cantidad, clase, categoria, subzona, subclase, depreciar, usuario, sGestion.ID)
             If mRS("cod_status") < 0 Then
                 'se produjo un error en el insert, se debe avisar
                 MsgBox(mRS("status"), vbCritical, "NH FOODS CHILE")
                 Exit Sub
             End If
             'ingreso primer registro TRIBUTARIO
-            mRS = base.INGRESO_TRIBUTARIO(codigo, zona, cantidad, clase, categoria, subzona, subclase, depreciar, usuario)
+            mRS = base.INGRESO_TRIBUTARIO(codigo, zona, cantidad, clase, categoria, subzona, subclase, depreciar, usuario, sGestion.ID)
             If mRS("cod_status") < 0 Then
                 'se produjo un error en el insert, se debe avisar
                 MsgBox(mRS("status"), vbCritical, "NH FOODS CHILE")
@@ -953,7 +967,7 @@
                 Dim val_res, VUA, metod_val As String
                 val_res = Math.Round(CLng(pcompra) * CDbl(base.IFRS_PREDET(clase)("pValRes")), 0)
                 VUA = Math.Round(CInt(vutil) / 12 * 365)
-                metod_val = base.IFRS_PREDET(clase)("metodVal")                
+                metod_val = base.IFRS_PREDET(clase)("metodVal")
                 mRS = base.INGREGO_IFRS(codigo, val_res, VUA, metod_val, 0, 0, 0, 0, 0)
                 If mRS("cod_status") < 0 Then
                     'se produjo un error en el procedimiento, se debe avisar
@@ -986,7 +1000,7 @@
             'origen no cambia, asi que no se requiere este segmento de codigo
 
             'modifico primer historico FINANCIERO
-            mRS = base.MODIFICA_FINANCIERO(artic.Text, zona, categoria, subzona, subclase, depreciar, usuario)
+            mRS = base.MODIFICA_FINANCIERO(artic.Text, zona, categoria, subzona, subclase, depreciar, usuario, sGestion.ID)
             If mRS("cod_status") < 0 Then
                 'se produjo un error en el procedimiento, se debe avisar
                 MsgBox(mRS("status"), vbCritical, "NH FOODS CHILE")

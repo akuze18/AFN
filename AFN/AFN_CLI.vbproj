@@ -112,6 +112,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATOS\transaccion_cont.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DATOS\gestion.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DATOS\lote_articulos.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -144,6 +150,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="general\Enumeraciones.vb" />
+    <Compile Include="Vistas\1cambios\form_gestion.Designer.vb">
+      <DependentUpon>form_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\1cambios\form_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\1cambios\form_descripciones.Designer.vb">
       <DependentUpon>form_descripciones.vb</DependentUpon>
     </Compile>
@@ -392,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\1cambios\form_descripciones.resx">
       <DependentUpon>form_descripciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\1cambios\form_gestion.resx">
+      <DependentUpon>form_gestion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\4sistema\form_config.resx">
       <DependentUpon>form_config.vb</DependentUpon>

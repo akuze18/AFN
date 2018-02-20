@@ -1,6 +1,4 @@
-﻿Imports System.Resources
-
-Imports System
+﻿Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -10,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Activo Fijo Nippon")> 
-<Assembly: AssemblyDescription("Aplicacion usada para el manejo del Activo Fijo")> 
-<Assembly: AssemblyCompany("Nippon Meat Packers Chile")> 
-<Assembly: AssemblyProduct("AFN")> 
-<Assembly: AssemblyCopyright("")> 
+<Assembly: AssemblyTitle("WindowsService1")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("Microsoft")> 
+<Assembly: AssemblyProduct("WindowsService1")> 
+<Assembly: AssemblyCopyright("Copyright © Microsoft 2018")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(False)> 
+<Assembly: ComVisible(False)>
 
 'El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-<Assembly: Guid("474e2497-0ab1-4344-9083-b1e13dc1f086")> 
+<Assembly: Guid("0e298a4c-f980-4305-8822-c0ddf638d8d1")> 
 
 ' La información de versión de un ensamblado consta de los cuatro valores siguientes:
 '
@@ -35,5 +33,3 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> 
-
-<Assembly: NeutralResourcesLanguageAttribute("es-CL")> 

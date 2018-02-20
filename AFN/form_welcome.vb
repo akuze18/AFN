@@ -1938,4 +1938,7 @@ Public Class form_welcome
         form_descripciones.ShowFrom(Me)
     End Sub
 
+    Private Sub Cambio10_Click(sender As System.Object, e As System.EventArgs) Handles Cambio10.Click
+        form_gestion.ShowFrom(Me)
+    End Sub
 End Class

@@ -754,6 +754,13 @@ Public Class base_AFN
         _txt_sql = "SELECT cod,descrip es FROM AFN_CATEGORIA WHERE cod<>'00' ORDER BY cod ASC"
         Return maestro.ejecuta(_txt_sql)
     End Function
+    Public Function GESTIONES() As gestion
+        _txt_sql = "SELECT id,code,nombre" + _
+            " FROM AFN_GESTION" + _
+            " ORDER BY code"
+        _colchon = maestro.ejecuta(_txt_sql)
+        Return New gestion(_colchon)
+    End Function
 
     Public Function TIPO_CAMPO() As DataTable
         _txt_sql = "SELECT cod,descrip,sigla FROM AFN_TIPO_CAMPO"
@@ -1445,23 +1452,26 @@ Public Class base_AFN
                                  ByVal CtiPo As String) As DataRow
         _txt_sql = "EXEC AFN_ing_lote '" + _
             descrip + "','" + fcompra.ToString("yyyyMMdd") + "','" + proveedor + "','" + documento + "'," + _
-            total_compra + "," + vutil.ToString + ",'" + derecho + "','" + fecha_contab.ToString("yyyyMMdd") + "','" + origen + "','" + CtiPo + "'"
+            total_compra + "," + vutil.ToString + ",'" + derecho + "','" + fecha_contab.ToString("yyyyMMdd") + _
+            "','" + origen + "','" + CtiPo + "','"
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon.Rows(0)
     End Function
     Public Function INGRESO_FINANCIERO(ByVal lote_articulo As Integer, ByVal zona As String, ByVal cantidad As Integer, _
                     ByVal clase As String, ByVal categoria As String, ByVal subzona As String, ByVal subclase As String, _
-                    ByVal depreciar As String, ByVal usuario As String) As DataRow
+                    ByVal depreciar As String, ByVal usuario As String, ByVal gestion As Integer) As DataRow
         _txt_sql = "EXEC AFN_ing_inv_F " + lote_articulo.ToString + ",'" + zona + "'," + _
-            cantidad.ToString + ",'" + clase + "','" + categoria + "'," + subzona + ",'" + subclase + "'," + depreciar + ",'" + usuario + "'"
+            cantidad.ToString + ",'" + clase + "','" + categoria + "'," + subzona + ",'" + _
+            subclase + "'," + depreciar + ",'" + usuario + "'," + gestion.ToString + ""
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon.Rows(0)
     End Function
     Public Function INGRESO_TRIBUTARIO(ByVal lote_articulo As Integer, ByVal zona As String, ByVal cantidad As Integer, _
                     ByVal clase As String, ByVal categoria As String, ByVal subzona As String, ByVal subclase As String, _
-                    ByVal depreciar As String, ByVal usuario As String) As DataRow
+                    ByVal depreciar As String, ByVal usuario As String, ByVal gestion As Integer) As DataRow
         _txt_sql = "EXEC AFN_ing_inv_T " + lote_articulo.ToString + ",'" + zona + "'," + _
-            cantidad.ToString + ",'" + clase + "','" + categoria + "'," + subzona + ",'" + subclase + "'," + depreciar + ",'" + usuario + "'"
+            cantidad.ToString + ",'" + clase + "','" + categoria + "'," + subzona + ",'" + _
+            subclase + "'," + depreciar + ",'" + usuario + "'," + gestion.ToString + ""
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon.Rows(0)
     End Function
@@ -1501,9 +1511,9 @@ Public Class base_AFN
         Return _colchon.Rows(0)
     End Function
     Public Function MODIFICA_FINANCIERO(lote_articulo As Integer, zona As String, categoria As String, _
-                                subzona As String, subclase As String, deprecia As String, usuario As String) As DataRow
+                                subzona As String, subclase As String, deprecia As String, usuario As String, ByVal gestion As Integer) As DataRow
         _txt_sql = "EXEC AFN_mod_inv_F " + lote_articulo.ToString + ",'" + zona + "','" + _
-            categoria + "'," + subzona + ",'" + subclase + "'," + deprecia + ",'" + usuario + "'"
+            categoria + "'," + subzona + ",'" + subclase + "'," + deprecia + ",'" + usuario + "'," + gestion.ToString + ""
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon.Rows(0)
     End Function

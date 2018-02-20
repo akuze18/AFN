@@ -25,6 +25,7 @@ Partial Class form_ingreso
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form_ingreso))
         Me.pasos = New System.Windows.Forms.TabControl()
         Me.paso1 = New System.Windows.Forms.TabPage()
+        Me.ckDepre = New System.Windows.Forms.CheckBox()
         Me.residuo = New System.Windows.Forms.TextBox()
         Me.TxtPrecioTotal = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -113,7 +114,8 @@ Partial Class form_ingreso
         Me.btn_modif = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
         Me.dialogo = New System.Windows.Forms.OpenFileDialog()
-        Me.ckDepre = New System.Windows.Forms.CheckBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.cboGestion = New System.Windows.Forms.ComboBox()
         Me.pasos.SuspendLayout()
         Me.paso1.SuspendLayout()
         CType(Me.btn_Bprov, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,12 +141,14 @@ Partial Class form_ingreso
         Me.pasos.Location = New System.Drawing.Point(12, 78)
         Me.pasos.Name = "pasos"
         Me.pasos.SelectedIndex = 0
-        Me.pasos.Size = New System.Drawing.Size(804, 382)
+        Me.pasos.Size = New System.Drawing.Size(834, 412)
         Me.pasos.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.pasos.TabIndex = 0
         '
         'paso1
         '
+        Me.paso1.Controls.Add(Me.cboGestion)
+        Me.paso1.Controls.Add(Me.Label21)
         Me.paso1.Controls.Add(Me.ckDepre)
         Me.paso1.Controls.Add(Me.residuo)
         Me.paso1.Controls.Add(Me.TxtPrecioTotal)
@@ -187,41 +191,54 @@ Partial Class form_ingreso
         Me.paso1.Location = New System.Drawing.Point(4, 22)
         Me.paso1.Name = "paso1"
         Me.paso1.Padding = New System.Windows.Forms.Padding(3)
-        Me.paso1.Size = New System.Drawing.Size(796, 356)
+        Me.paso1.Size = New System.Drawing.Size(826, 386)
         Me.paso1.TabIndex = 0
         Me.paso1.Text = "Ficha Básica"
         Me.paso1.UseVisualStyleBackColor = True
         '
+        'ckDepre
+        '
+        Me.ckDepre.AutoSize = True
+        Me.ckDepre.Checked = True
+        Me.ckDepre.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ckDepre.Location = New System.Drawing.Point(222, 321)
+        Me.ckDepre.Name = "ckDepre"
+        Me.ckDepre.Size = New System.Drawing.Size(72, 17)
+        Me.ckDepre.TabIndex = 36
+        Me.ckDepre.Text = "Depreciar"
+        Me.ckDepre.UseVisualStyleBackColor = True
+        '
         'residuo
         '
         Me.residuo.Enabled = False
-        Me.residuo.Location = New System.Drawing.Point(625, 176)
+        Me.residuo.Location = New System.Drawing.Point(766, 238)
         Me.residuo.Name = "residuo"
         Me.residuo.Size = New System.Drawing.Size(27, 20)
-        Me.residuo.TabIndex = 20
+        Me.residuo.TabIndex = 24
         Me.residuo.Text = "0"
         Me.residuo.Visible = False
         '
         'TxtPrecioTotal
         '
         Me.TxtPrecioTotal.Enabled = False
-        Me.TxtPrecioTotal.Location = New System.Drawing.Point(620, 207)
+        Me.TxtPrecioTotal.Location = New System.Drawing.Point(620, 238)
         Me.TxtPrecioTotal.Name = "TxtPrecioTotal"
         Me.TxtPrecioTotal.Size = New System.Drawing.Size(140, 20)
-        Me.TxtPrecioTotal.TabIndex = 26
+        Me.TxtPrecioTotal.TabIndex = 23
         '
         'Label34
         '
         Me.Label34.AutoSize = True
         Me.Label34.Enabled = False
-        Me.Label34.Location = New System.Drawing.Point(550, 210)
+        Me.Label34.Location = New System.Drawing.Point(550, 241)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(64, 13)
-        Me.Label34.TabIndex = 25
+        Me.Label34.TabIndex = 22
         Me.Label34.Text = "Precio Total"
         '
         'cboSubzona
         '
+        Me.cboSubzona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSubzona.FormattingEnabled = True
         Me.cboSubzona.Location = New System.Drawing.Point(350, 69)
         Me.cboSubzona.Name = "cboSubzona"
@@ -231,7 +248,7 @@ Partial Class form_ingreso
         'btn_Bprov
         '
         Me.btn_Bprov.Image = Global.AFN.My.Resources.Resources.find
-        Me.btn_Bprov.Location = New System.Drawing.Point(620, 135)
+        Me.btn_Bprov.Location = New System.Drawing.Point(620, 163)
         Me.btn_Bprov.Name = "btn_Bprov"
         Me.btn_Bprov.Size = New System.Drawing.Size(25, 26)
         Me.btn_Bprov.TabIndex = 35
@@ -240,11 +257,11 @@ Partial Class form_ingreso
         'btn_act
         '
         Me.btn_act.Image = Global.AFN.My.Resources.Resources._32_lock
-        Me.btn_act.Location = New System.Drawing.Point(629, 293)
+        Me.btn_act.Location = New System.Drawing.Point(629, 321)
         Me.btn_act.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_act.Name = "btn_act"
         Me.btn_act.Size = New System.Drawing.Size(53, 45)
-        Me.btn_act.TabIndex = 37
+        Me.btn_act.TabIndex = 39
         Me.btn_act.Text = "Activar"
         Me.btn_act.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_act.UseVisualStyleBackColor = True
@@ -252,11 +269,11 @@ Partial Class form_ingreso
         'btn_elim
         '
         Me.btn_elim.Image = Global.AFN.My.Resources.Resources._32_remove
-        Me.btn_elim.Location = New System.Drawing.Point(537, 293)
+        Me.btn_elim.Location = New System.Drawing.Point(537, 321)
         Me.btn_elim.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_elim.Name = "btn_elim"
         Me.btn_elim.Size = New System.Drawing.Size(53, 45)
-        Me.btn_elim.TabIndex = 36
+        Me.btn_elim.TabIndex = 38
         Me.btn_elim.Text = "Eliminar"
         Me.btn_elim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_elim.UseVisualStyleBackColor = True
@@ -264,11 +281,11 @@ Partial Class form_ingreso
         'btn_guardar
         '
         Me.btn_guardar.Image = Global.AFN.My.Resources.Resources._32_next
-        Me.btn_guardar.Location = New System.Drawing.Point(437, 293)
+        Me.btn_guardar.Location = New System.Drawing.Point(437, 321)
         Me.btn_guardar.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(53, 45)
-        Me.btn_guardar.TabIndex = 35
+        Me.btn_guardar.TabIndex = 37
         Me.btn_guardar.Text = "Guardar"
         Me.btn_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_guardar.UseVisualStyleBackColor = True
@@ -276,10 +293,10 @@ Partial Class form_ingreso
         'ckIFRS
         '
         Me.ckIFRS.AutoSize = True
-        Me.ckIFRS.Location = New System.Drawing.Point(90, 293)
+        Me.ckIFRS.Location = New System.Drawing.Point(90, 321)
         Me.ckIFRS.Name = "ckIFRS"
         Me.ckIFRS.Size = New System.Drawing.Size(97, 17)
-        Me.ckIFRS.TabIndex = 33
+        Me.ckIFRS.TabIndex = 35
         Me.ckIFRS.Text = "Ingresa a IFRS"
         Me.ckIFRS.UseVisualStyleBackColor = True
         '
@@ -287,12 +304,12 @@ Partial Class form_ingreso
         '
         Me.Fderecho.Controls.Add(Me.derC2)
         Me.Fderecho.Controls.Add(Me.derC1)
-        Me.Fderecho.Location = New System.Drawing.Point(622, 240)
+        Me.Fderecho.Location = New System.Drawing.Point(622, 268)
         Me.Fderecho.Margin = New System.Windows.Forms.Padding(0)
         Me.Fderecho.Name = "Fderecho"
         Me.Fderecho.Padding = New System.Windows.Forms.Padding(0)
         Me.Fderecho.Size = New System.Drawing.Size(113, 28)
-        Me.Fderecho.TabIndex = 32
+        Me.Fderecho.TabIndex = 34
         Me.Fderecho.TabStop = False
         '
         'derC2
@@ -319,130 +336,133 @@ Partial Class form_ingreso
         '
         'Label17
         '
-        Me.Label17.Location = New System.Drawing.Point(550, 245)
+        Me.Label17.Location = New System.Drawing.Point(550, 273)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(56, 27)
-        Me.Label17.TabIndex = 31
+        Me.Label17.TabIndex = 33
         Me.Label17.Text = "Derecho Credito"
         '
         'Tdoc
         '
-        Me.Tdoc.Location = New System.Drawing.Point(350, 245)
+        Me.Tdoc.Location = New System.Drawing.Point(350, 273)
         Me.Tdoc.Name = "Tdoc"
         Me.Tdoc.Size = New System.Drawing.Size(140, 20)
-        Me.Tdoc.TabIndex = 30
+        Me.Tdoc.TabIndex = 32
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(270, 245)
+        Me.Label16.Location = New System.Drawing.Point(270, 273)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(77, 13)
-        Me.Label16.TabIndex = 29
+        Me.Label16.TabIndex = 31
         Me.Label16.Text = "Nº Documento"
         '
         'TvuF
         '
-        Me.TvuF.Location = New System.Drawing.Point(90, 245)
+        Me.TvuF.Location = New System.Drawing.Point(90, 273)
         Me.TvuF.Name = "TvuF"
         Me.TvuF.Size = New System.Drawing.Size(140, 20)
-        Me.TvuF.TabIndex = 28
+        Me.TvuF.TabIndex = 30
         '
         'Label15
         '
-        Me.Label15.Location = New System.Drawing.Point(20, 245)
+        Me.Label15.Location = New System.Drawing.Point(20, 273)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(72, 35)
-        Me.Label15.TabIndex = 27
+        Me.Label15.TabIndex = 29
         Me.Label15.Text = "Vida Util (Meses)"
         '
         'Tprecio_compra
         '
-        Me.Tprecio_compra.Location = New System.Drawing.Point(350, 210)
+        Me.Tprecio_compra.Location = New System.Drawing.Point(350, 238)
         Me.Tprecio_compra.Name = "Tprecio_compra"
         Me.Tprecio_compra.Size = New System.Drawing.Size(140, 20)
-        Me.Tprecio_compra.TabIndex = 24
+        Me.Tprecio_compra.TabIndex = 28
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(270, 210)
+        Me.Label14.Location = New System.Drawing.Point(270, 238)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(76, 13)
-        Me.Label14.TabIndex = 23
+        Me.Label14.TabIndex = 27
         Me.Label14.Text = "Precio Unitario"
         '
         'Tcantidad
         '
-        Me.Tcantidad.Location = New System.Drawing.Point(90, 210)
+        Me.Tcantidad.Location = New System.Drawing.Point(90, 238)
         Me.Tcantidad.Name = "Tcantidad"
         Me.Tcantidad.Size = New System.Drawing.Size(140, 20)
-        Me.Tcantidad.TabIndex = 22
+        Me.Tcantidad.TabIndex = 26
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(20, 210)
+        Me.Label13.Location = New System.Drawing.Point(20, 238)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(49, 13)
-        Me.Label13.TabIndex = 21
+        Me.Label13.TabIndex = 25
         Me.Label13.Text = "Cantidad"
         '
         'cbFecha_ing
         '
+        Me.cbFecha_ing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFecha_ing.FormattingEnabled = True
-        Me.cbFecha_ing.Location = New System.Drawing.Point(350, 175)
+        Me.cbFecha_ing.Location = New System.Drawing.Point(350, 203)
         Me.cbFecha_ing.Name = "cbFecha_ing"
         Me.cbFecha_ing.Size = New System.Drawing.Size(140, 21)
-        Me.cbFecha_ing.TabIndex = 19
+        Me.cbFecha_ing.TabIndex = 21
         '
         'Label12
         '
-        Me.Label12.Location = New System.Drawing.Point(270, 175)
+        Me.Label12.Location = New System.Drawing.Point(270, 203)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(77, 35)
-        Me.Label12.TabIndex = 18
+        Me.Label12.TabIndex = 20
         Me.Label12.Text = "Periodo Contable"
         '
         'Tfecha_compra
         '
         Me.Tfecha_compra.CustomFormat = "dd-MM-yyyy"
         Me.Tfecha_compra.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Tfecha_compra.Location = New System.Drawing.Point(90, 175)
+        Me.Tfecha_compra.Location = New System.Drawing.Point(90, 203)
         Me.Tfecha_compra.Name = "Tfecha_compra"
         Me.Tfecha_compra.Size = New System.Drawing.Size(130, 20)
-        Me.Tfecha_compra.TabIndex = 17
+        Me.Tfecha_compra.TabIndex = 19
         '
         'Label11
         '
-        Me.Label11.Location = New System.Drawing.Point(20, 175)
+        Me.Label11.Location = New System.Drawing.Point(20, 203)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(72, 35)
-        Me.Label11.TabIndex = 16
+        Me.Label11.TabIndex = 18
         Me.Label11.Text = "Fecha Adquisición"
         '
         'cboProveedor
         '
         Me.cboProveedor.DropDownHeight = 93
+        Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProveedor.FormattingEnabled = True
         Me.cboProveedor.IntegralHeight = False
-        Me.cboProveedor.Location = New System.Drawing.Point(90, 140)
+        Me.cboProveedor.Location = New System.Drawing.Point(90, 168)
         Me.cboProveedor.MaxDropDownItems = 7
         Me.cboProveedor.Name = "cboProveedor"
         Me.cboProveedor.Size = New System.Drawing.Size(500, 21)
-        Me.cboProveedor.TabIndex = 15
+        Me.cboProveedor.TabIndex = 17
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(20, 140)
+        Me.Label10.Location = New System.Drawing.Point(20, 168)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(56, 13)
-        Me.Label10.TabIndex = 14
+        Me.Label10.TabIndex = 16
         Me.Label10.Text = "Proveedor"
         '
         'cboCateg
         '
+        Me.cboCateg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCateg.FormattingEnabled = True
         Me.cboCateg.Location = New System.Drawing.Point(620, 70)
         Me.cboCateg.Name = "cboCateg"
@@ -461,7 +481,7 @@ Partial Class form_ingreso
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(270, 105)
+        Me.Label8.Location = New System.Drawing.Point(270, 103)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(33, 13)
         Me.Label8.TabIndex = 10
@@ -478,30 +498,34 @@ Partial Class form_ingreso
         '
         'cboClase
         '
+        Me.cboClase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboClase.FormattingEnabled = True
-        Me.cboClase.Location = New System.Drawing.Point(350, 105)
+        Me.cboClase.Location = New System.Drawing.Point(350, 103)
         Me.cboClase.Name = "cboClase"
         Me.cboClase.Size = New System.Drawing.Size(140, 21)
         Me.cboClase.TabIndex = 11
         '
         'cboSubclase
         '
+        Me.cboSubclase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSubclase.FormattingEnabled = True
-        Me.cboSubclase.Location = New System.Drawing.Point(620, 105)
+        Me.cboSubclase.Location = New System.Drawing.Point(620, 103)
         Me.cboSubclase.Name = "cboSubclase"
         Me.cboSubclase.Size = New System.Drawing.Size(140, 21)
         Me.cboSubclase.TabIndex = 13
         '
         'cboConsist
         '
+        Me.cboConsist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboConsist.FormattingEnabled = True
-        Me.cboConsist.Location = New System.Drawing.Point(90, 105)
+        Me.cboConsist.Location = New System.Drawing.Point(90, 103)
         Me.cboConsist.Name = "cboConsist"
         Me.cboConsist.Size = New System.Drawing.Size(140, 21)
         Me.cboConsist.TabIndex = 9
         '
         'cboZona
         '
+        Me.cboZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboZona.FormattingEnabled = True
         Me.cboZona.Location = New System.Drawing.Point(90, 70)
         Me.cboZona.Name = "cboZona"
@@ -513,13 +537,13 @@ Partial Class form_ingreso
         Me.Tdescrip.Location = New System.Drawing.Point(90, 15)
         Me.Tdescrip.Multiline = True
         Me.Tdescrip.Name = "Tdescrip"
-        Me.Tdescrip.Size = New System.Drawing.Size(475, 40)
+        Me.Tdescrip.Size = New System.Drawing.Size(686, 40)
         Me.Tdescrip.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(550, 105)
+        Me.Label4.Location = New System.Drawing.Point(550, 103)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 13)
         Me.Label4.TabIndex = 12
@@ -528,7 +552,7 @@ Partial Class form_ingreso
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 105)
+        Me.Label3.Location = New System.Drawing.Point(20, 103)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(28, 13)
         Me.Label3.TabIndex = 8
@@ -1047,24 +1071,30 @@ Partial Class form_ingreso
         '
         Me.dialogo.FileName = "foto"
         '
-        'ckDepre
+        'Label21
         '
-        Me.ckDepre.AutoSize = True
-        Me.ckDepre.Checked = True
-        Me.ckDepre.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ckDepre.Location = New System.Drawing.Point(222, 293)
-        Me.ckDepre.Name = "ckDepre"
-        Me.ckDepre.Size = New System.Drawing.Size(72, 17)
-        Me.ckDepre.TabIndex = 34
-        Me.ckDepre.Text = "Depreciar"
-        Me.ckDepre.UseVisualStyleBackColor = True
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(20, 139)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(43, 13)
+        Me.Label21.TabIndex = 14
+        Me.Label21.Text = "Gestion"
+        '
+        'cboGestion
+        '
+        Me.cboGestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboGestion.FormattingEnabled = True
+        Me.cboGestion.Location = New System.Drawing.Point(90, 136)
+        Me.cboGestion.Name = "cboGestion"
+        Me.cboGestion.Size = New System.Drawing.Size(140, 21)
+        Me.cboGestion.TabIndex = 15
         '
         'form_ingreso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(869, 468)
+        Me.ClientSize = New System.Drawing.Size(869, 502)
         Me.Controls.Add(Me.fuente)
         Me.Controls.Add(Me.CkEstado)
         Me.Controls.Add(Me.TFulldescrip)
@@ -1189,4 +1219,6 @@ Partial Class form_ingreso
     Friend WithEvents dialogo As System.Windows.Forms.OpenFileDialog
     Friend WithEvents ckMostrarA As System.Windows.Forms.CheckBox
     Friend WithEvents ckDepre As System.Windows.Forms.CheckBox
+    Friend WithEvents cboGestion As System.Windows.Forms.ComboBox
+    Friend WithEvents Label21 As System.Windows.Forms.Label
 End Class
