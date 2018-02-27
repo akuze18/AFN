@@ -31,7 +31,7 @@ Partial Class form_etiquetas
         Me.btn_less = New System.Windows.Forms.Button()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.chkSelAntes = New System.Windows.Forms.CheckBox()
-        Me.Multicriterio1 = New AFN.multicriterio()
+        Me.Multicriterio1 = New Global.AFN.multicriterio()
         CType(Me.dgv_resultado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -147,7 +147,7 @@ End Sub
     Friend WithEvents btn_imprimir As System.Windows.Forms.Button
     Friend WithEvents dgv_resultado As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Multicriterio1 As AFN.multicriterio
+    Friend WithEvents Multicriterio1 As Global.AFN.multicriterio
     Friend WithEvents btn_add As System.Windows.Forms.Button
     Friend WithEvents btn_less As System.Windows.Forms.Button
     Friend WithEvents btn_find As System.Windows.Forms.Button

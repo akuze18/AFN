@@ -77,7 +77,7 @@
         MosResult.Refresh()
         'Application.DoEvents()
 
-        Dim fbp As ProgressShow = AFN.cargar_barra(Me)
+        Dim fbp As ProgressShow = Global.AFN.cargar_barra(Me)
         fbp.inicializar(1, Tresult)
         For i = 0 To Tresult - 1
             Dim newfila As DataRow = colchon.NewRow

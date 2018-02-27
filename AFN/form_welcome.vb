@@ -220,7 +220,7 @@ Public Class form_welcome
 
 #Region "Opcion 'Reportes'"
     Private Sub Reporte1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Reporte1.Click
-        form_reporte.Show()
+        Vistas.Reportes.form_reporte.Show()
         Me.Hide()
     End Sub
     Private Sub Reporte2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Reporte2.Click

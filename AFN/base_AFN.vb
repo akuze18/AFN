@@ -1143,6 +1143,8 @@ Public Class base_AFN
                 "valor_libro 'Valor Libro del Activo'," + _
                 "FcodSubzona 'Codigo Subzona'," + _
                 "FtxtSubzona 'Descripción Subzona'," + _
+                "FcodGestion 'Codigo Gestion'," + _
+                "FtxtGestion 'Descripción Gestion'," + _
                 "fecha_ingreso 'Fecha Contabilizacion'," + _
                 "origen 'Origen'," + _
                 "cod_ubicacion 'Codigo Ubicación'," + _
@@ -1194,6 +1196,8 @@ Public Class base_AFN
                 "valor_libro 'Valor Libro del Activo'," + _
                 "FcodSubzona 'Codigo Subzona'," + _
                 "FtxtSubzona 'Descripción Subzona'," + _
+                "FcodGestion 'Codigo Gestion'," + _
+                "FtxtGestion 'Descripción Gestion'," + _
                 "fecha_ingreso 'Fecha Contabilizacion'," + _
                 "origen 'Origen'," + _
                 "VU_inicial 'Vida Util Inicial'" + Chr(13) + _
@@ -1201,9 +1205,9 @@ Public Class base_AFN
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon
     End Function
-    Public Function REPORTE_VIG_RESUMEN(ByVal datos As form_reporte_dato) As DataTable
+    Public Function REPORTE_VIG_RESUMEN(ByVal datos As Vistas.Reportes.form_reporte_dato) As DataTable
         Dim titulo1, titulo2, titulo3 As String
-        If datos.vista = form_reporte_dato.BVista.C Then
+        If datos.vista = Vistas.Reportes.form_reporte_dato.BVista.C Then
             titulo1 = "Clase de Activo"
             titulo2 = "Nombre Departamento"
             titulo3 = "Nombre Lugar"
@@ -1453,7 +1457,7 @@ Public Class base_AFN
         _txt_sql = "EXEC AFN_ing_lote '" + _
             descrip + "','" + fcompra.ToString("yyyyMMdd") + "','" + proveedor + "','" + documento + "'," + _
             total_compra + "," + vutil.ToString + ",'" + derecho + "','" + fecha_contab.ToString("yyyyMMdd") + _
-            "','" + origen + "','" + CtiPo + "','"
+            "','" + origen + "','" + CtiPo + "'"
         _colchon = maestro.ejecuta(_txt_sql)
         Return _colchon.Rows(0)
     End Function

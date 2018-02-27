@@ -78,9 +78,9 @@ Public Class ambiente
 
     Shared Function Items(ByVal moneda As String) As valores()
         Select Case moneda
-            Case AFN.moneda.YEN
+            Case Global.AFN.moneda.YEN
                 Return New valores() {vals(0), vals(1)}
-            Case AFN.moneda.MIX
+            Case Global.AFN.moneda.MIX
                 Return val_special
             Case Else
                 Return vals
@@ -119,11 +119,11 @@ Public Class vista
 
     Shared Function Items(ByVal ambiente As String, ByVal moneda As String) As valores()
         Select Case moneda
-            Case AFN.moneda.MIX
+            Case Global.AFN.moneda.MIX
                 Return New valores() {}
-            Case AFN.moneda.CLP
+            Case Global.AFN.moneda.CLP
                 Select Case ambiente
-                    Case AFN.ambiente.FIN
+                    Case Global.AFN.ambiente.FIN
                         Return vals
                     Case Else
                         Return New valores() {vals(0), vals(1), vals(2)}

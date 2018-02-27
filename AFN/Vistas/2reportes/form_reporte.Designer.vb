@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Namespace Vistas.Reportes
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class form_reporte
     Inherits System.Windows.Forms.Form
 
@@ -133,3 +134,4 @@ Partial Class form_reporte
     Friend WithEvents cb_clase As System.Windows.Forms.ComboBox
     Friend WithEvents cb_zona As System.Windows.Forms.ComboBox
 End Class
+End Namespace

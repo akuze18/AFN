@@ -21,7 +21,7 @@ Public Class BackProcess
     Private _moneda1 As base_AFN.BMoneda
     Private _ambiente1 As base_AFN.BAmbiente
 
-    Private _reporte_datos As form_reporte_dato
+    Private _reporte_datos As Vistas.Reportes.form_reporte_dato
 
 #End Region
 
@@ -187,7 +187,7 @@ Public Class BackProcess
         RaiseEvent capturar(tabla)
     End Sub
 
-    Public Sub ini_REPORTE_VIG_RESUMEN(ByVal dato As form_reporte_dato)
+    Public Sub ini_REPORTE_VIG_RESUMEN(ByVal dato As Vistas.Reportes.form_reporte_dato)
         _reporte_datos = dato
 
         'Agregamos el handler del evento (si no lo hacemos no podremos interceptarlo)

@@ -1,6 +1,7 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class form_descripciones
-    Inherits AFN.MainForm
+    Inherits Global.AFN.MainForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
