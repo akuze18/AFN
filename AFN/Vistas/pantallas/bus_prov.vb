@@ -28,7 +28,7 @@
 
     Private Sub bus_prov_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim TB_zona As New DataTable
-        Dim sql_periodo As String
+        'Dim sql_periodo As String
         'agrego columnas para datagridviewer
         MosResult.DataSource = dato_resultado()
         MosResult.RowHeadersWidth = 10
@@ -37,16 +37,16 @@
         MosResult.AllowUserToResizeRows = False
         MosResult.Columns(0).Width = 100
         MosResult.Columns(1).Width = 310
-        MosResult.Columns(2).Width = 50
+        MosResult.Columns(2).Width = 150
         MosResult.Columns(3).Visible = False
         MosResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-        'zonas
-        sql_periodo = "SELECT COD_GL [cod],NOMBRE [es] FROM AFN_ZONA WHERE ACTIVA=1 ORDER BY COD_GL"
-        TB_zona = maestro.ejecuta(sql_periodo)
-        cboZona.DisplayMember = "es"
-        cboZona.ValueMember = "cod"
-        cboZona.DataSource = TB_zona
+        ''zonas
+        'sql_periodo = "SELECT COD_GL [cod],NOMBRE [es] FROM AFN_ZONA WHERE ACTIVA=1 ORDER BY COD_GL"
+        'TB_zona = maestro.ejecuta(sql_periodo)
+        'cboZona.DisplayMember = "es"
+        'cboZona.ValueMember = "cod"
+        'cboZona.DataSource = TB_zona
     End Sub
 
     Private Sub btn_buscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_buscar.Click
@@ -88,7 +88,7 @@
                 newfila(0) = Strings.Left(cod_rut, Len(cod_rut) - 1) + "-" + Strings.Right(cod_rut, 1)
             End If
             newfila(1) = resultado.Rows(i).Item(1)
-            newfila(2) = Strings.Left(resultado.Rows(i).Item(2), 2)
+            newfila(2) = resultado.Rows(i).Item(2)
             newfila(3) = resultado.Rows(i).Item(3)
             colchon.Rows.Add(newfila)
             fbp.continua_proceso()
@@ -136,7 +136,7 @@
         fondo = "FROM PM00200 A" + Chr(13) + "WHERE " + _
         "VNDCLSID LIKE '" + zona + "%' and " + _
         "VENDNAME like '%" + nombre + "%' and " + _
-        "PARVENDID like '%" + rut + "%' ORDER BY 2"
+        "PARVENDID like '%" + rut + "%' AND FUENTE='NEW' ORDER BY 2"
         sql_conteo = "SELECT A.PARVENDID, A.VENDNAME, A.VNDCLSID, A.COD[VENDORID] " + fondo
         colchon = maestro.ejecuta(sql_conteo)
         Return colchon
@@ -169,7 +169,7 @@
         Dim formato_resultado As New DataTable
         formato_resultado.Columns.Add("RUT", Type.GetType("System.String"))
         formato_resultado.Columns.Add("NOMBRE", Type.GetType("System.String"))
-        formato_resultado.Columns.Add("ZONA", Type.GetType("System.String"))
+        formato_resultado.Columns.Add("CLASE", Type.GetType("System.String"))
         formato_resultado.Columns.Add("ID", Type.GetType("System.String"))
         Return formato_resultado
     End Function

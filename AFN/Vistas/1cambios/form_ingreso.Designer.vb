@@ -25,6 +25,8 @@ Partial Class form_ingreso
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form_ingreso))
         Me.pasos = New System.Windows.Forms.TabControl()
         Me.paso1 = New System.Windows.Forms.TabPage()
+        Me.cboGestion = New System.Windows.Forms.ComboBox()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.ckDepre = New System.Windows.Forms.CheckBox()
         Me.residuo = New System.Windows.Forms.TextBox()
         Me.TxtPrecioTotal = New System.Windows.Forms.TextBox()
@@ -114,8 +116,6 @@ Partial Class form_ingreso
         Me.btn_modif = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
         Me.dialogo = New System.Windows.Forms.OpenFileDialog()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.cboGestion = New System.Windows.Forms.ComboBox()
         Me.pasos.SuspendLayout()
         Me.paso1.SuspendLayout()
         CType(Me.btn_Bprov, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,6 +195,24 @@ Partial Class form_ingreso
         Me.paso1.TabIndex = 0
         Me.paso1.Text = "Ficha Básica"
         Me.paso1.UseVisualStyleBackColor = True
+        '
+        'cboGestion
+        '
+        Me.cboGestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboGestion.FormattingEnabled = True
+        Me.cboGestion.Location = New System.Drawing.Point(90, 136)
+        Me.cboGestion.Name = "cboGestion"
+        Me.cboGestion.Size = New System.Drawing.Size(140, 21)
+        Me.cboGestion.TabIndex = 15
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(20, 139)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(43, 13)
+        Me.Label21.TabIndex = 14
+        Me.Label21.Text = "Gestion"
         '
         'ckDepre
         '
@@ -442,7 +460,6 @@ Partial Class form_ingreso
         'cboProveedor
         '
         Me.cboProveedor.DropDownHeight = 93
-        Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProveedor.FormattingEnabled = True
         Me.cboProveedor.IntegralHeight = False
         Me.cboProveedor.Location = New System.Drawing.Point(90, 168)
@@ -590,7 +607,7 @@ Partial Class form_ingreso
         Me.paso2.Location = New System.Drawing.Point(4, 22)
         Me.paso2.Name = "paso2"
         Me.paso2.Padding = New System.Windows.Forms.Padding(3)
-        Me.paso2.Size = New System.Drawing.Size(796, 356)
+        Me.paso2.Size = New System.Drawing.Size(826, 386)
         Me.paso2.TabIndex = 1
         Me.paso2.Text = "Ficha IFRS"
         Me.paso2.UseVisualStyleBackColor = True
@@ -705,7 +722,7 @@ Partial Class form_ingreso
         Me.paso3.Location = New System.Drawing.Point(4, 22)
         Me.paso3.Name = "paso3"
         Me.paso3.Padding = New System.Windows.Forms.Padding(3)
-        Me.paso3.Size = New System.Drawing.Size(796, 356)
+        Me.paso3.Size = New System.Drawing.Size(826, 386)
         Me.paso3.TabIndex = 2
         Me.paso3.Text = "Descripción por Grupo"
         Me.paso3.UseVisualStyleBackColor = True
@@ -849,7 +866,7 @@ Partial Class form_ingreso
         Me.paso4.Location = New System.Drawing.Point(4, 22)
         Me.paso4.Name = "paso4"
         Me.paso4.Padding = New System.Windows.Forms.Padding(3)
-        Me.paso4.Size = New System.Drawing.Size(796, 356)
+        Me.paso4.Size = New System.Drawing.Size(826, 386)
         Me.paso4.TabIndex = 3
         Me.paso4.Text = "Descripción por Articulo"
         Me.paso4.UseVisualStyleBackColor = True
@@ -1070,24 +1087,6 @@ Partial Class form_ingreso
         'dialogo
         '
         Me.dialogo.FileName = "foto"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(20, 139)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(43, 13)
-        Me.Label21.TabIndex = 14
-        Me.Label21.Text = "Gestion"
-        '
-        'cboGestion
-        '
-        Me.cboGestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboGestion.FormattingEnabled = True
-        Me.cboGestion.Location = New System.Drawing.Point(90, 136)
-        Me.cboGestion.Name = "cboGestion"
-        Me.cboGestion.Size = New System.Drawing.Size(140, 21)
-        Me.cboGestion.TabIndex = 15
         '
         'form_ingreso
         '

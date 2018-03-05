@@ -33,7 +33,7 @@
         End With
         'proveedor
         With cboProveedor
-            .DataSource = base.PROVEEDOR_GP
+            .DataSource = base.PROVEEDOR_GP(base_AFN.tipo_proveedor.SoloNuevos)
             .ValueMember = .DataSource.Columns(0).ColumnName
             .DisplayMember = .DataSource.Columns(1).ColumnName
             .SelectedIndex = -1

@@ -18,6 +18,12 @@ Public Class base_AFN
         TRIB = 2
         IFRS = 3
     End Enum
+
+    Public Enum tipo_proveedor
+        SoloNuevos = 1
+        SoloAntiguos = 2
+        Todos = 3
+    End Enum
 #End Region
 
 #Region "Variables de la clase"
@@ -980,10 +986,21 @@ Public Class base_AFN
 #End Region
 
 #Region "Desde GP"
-    Public Function PROVEEDOR_GP() As DataTable
+    Public Function PROVEEDOR_GP(ByVal incluir As tipo_proveedor) As DataTable
         Dim colchon As DataTable
-        Dim sql_txt As String
-        sql_txt = "SELECT COD,TEXTO FROM PM00200 ORDER BY VENDNAME"
+        Dim sql_txt, fuente As String
+        Select Case incluir
+            Case tipo_proveedor.SoloNuevos
+                fuente = "NEW"
+            Case tipo_proveedor.SoloAntiguos
+                fuente = "OLD"
+            Case Else
+                fuente = ""
+        End Select
+        If Not String.IsNullOrEmpty(fuente) Then
+            fuente = " WHERE FUENTE = '" + fuente + "'"
+        End If
+        sql_txt = "SELECT COD,TEXTO FROM PM00200" + fuente + " ORDER BY VENDNAME"
         colchon = maestro.ejecuta(sql_txt)
         Return colchon
     End Function

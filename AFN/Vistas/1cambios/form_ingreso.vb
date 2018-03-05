@@ -63,7 +63,7 @@
         End With
         'proveedor
         With cboProveedor
-            Tproveedor = base.PROVEEDOR_GP
+            Tproveedor = base.PROVEEDOR_GP(base_AFN.tipo_proveedor.SoloNuevos)
             .ValueMember = Tproveedor.Columns(0).ColumnName
             .DisplayMember = Tproveedor.Columns(1).ColumnName
             .DataSource = Tproveedor

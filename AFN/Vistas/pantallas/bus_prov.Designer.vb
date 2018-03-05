@@ -79,6 +79,7 @@ Partial Class bus_prov
         '
         'cboZona
         '
+        Me.cboZona.Enabled = False
         Me.cboZona.FormattingEnabled = True
         Me.cboZona.Location = New System.Drawing.Point(85, 61)
         Me.cboZona.Name = "cboZona"
@@ -118,18 +119,18 @@ Partial Class bus_prov
         Me.MosResult.AllowUserToDeleteRows = False
         Me.MosResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MosResult.Location = New System.Drawing.Point(15, 114)
-        Me.MosResult.MaximumSize = New System.Drawing.Size(491, 150)
-        Me.MosResult.MinimumSize = New System.Drawing.Size(491, 150)
+        Me.MosResult.MaximumSize = New System.Drawing.Size(520, 150)
+        Me.MosResult.MinimumSize = New System.Drawing.Size(520, 150)
         Me.MosResult.Name = "MosResult"
         Me.MosResult.ReadOnly = True
-        Me.MosResult.Size = New System.Drawing.Size(491, 150)
+        Me.MosResult.Size = New System.Drawing.Size(520, 150)
         Me.MosResult.TabIndex = 9
         '
         'bus_prov
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(518, 276)
+        Me.ClientSize = New System.Drawing.Size(554, 277)
         Me.Controls.Add(Me.MosResult)
         Me.Controls.Add(Me.Lresultado)
         Me.Controls.Add(Me.btn_marcar)
@@ -142,9 +143,9 @@ Partial Class bus_prov
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(534, 314)
+        Me.MaximumSize = New System.Drawing.Size(570, 315)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(534, 314)
+        Me.MinimumSize = New System.Drawing.Size(570, 315)
         Me.Name = "bus_prov"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar un proveedor"
